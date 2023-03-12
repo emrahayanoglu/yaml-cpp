@@ -12,6 +12,7 @@ FROM base AS yaml-cpp
 
 RUN pwd
 RUN pwd
+RUN pwd
 
 WORKDIR /app
 
