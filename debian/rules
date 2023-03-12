@@ -11,4 +11,5 @@
 override_dh_auto_configure:
 	dh_auto_configure -- \
 	      -DCMAKE_LIBRARY_ARCHITECTURE="$(DEB_TARGET_MULTIARCH)" \
-		  -DYAML_CPP_BUILD_TESTS=OFF
+		  -DYAML_CPP_BUILD_TESTS=OFF \
+		  -DCMAKE_INSTALL_DATADIR="/usr/share/$(DEB_HOST_MULTIARCH)"
