@@ -11,6 +11,7 @@ RUN apt-get install -y crossbuild-essential-armhf crossbuild-essential-arm64
 FROM base AS yaml-cpp
 
 RUN pwd
+RUN pwd
 
 WORKDIR /app
 
@@ -42,3 +43,7 @@ WORKDIR /app/yaml-cpp_0.7.0/
 
 RUN apt-get -o Debug::pkgProblemResolver=yes -y --force-yes build-dep -aarm64 .
 RUN debuild -us -uc -aarm64
+
+WORKDIR /app
+RUN mkdir -p build
+RUN cp *.deb build/
